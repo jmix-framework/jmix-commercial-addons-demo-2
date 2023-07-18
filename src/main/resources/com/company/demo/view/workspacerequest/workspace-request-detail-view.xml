@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      title="msg://workspaceRequestDetailView.title"
+      focusComponent="form">
+    <data>
+        <instance id="workspaceRequestDc"
+                  class="com.company.demo.entity.WorkspaceRequest">
+            <fetchPlan extends="_base">
+                <property name="hrManager" fetchPlan="_instance_name"/>
+                <property name="employee" fetchPlan="_instance_name"/>
+                <property name="softwareRequests" fetchPlan="_base">
+                    <property name="software" fetchPlan="_base"/>
+                </property>
+            </fetchPlan>
+            <loader/>
+            <collection id="softwareRequestsDc" property="softwareRequests"/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <actions>
+        <!-- The standard action is replaced with custom `completeBtn` button, see below -->
+        <!-- <action id="saveAction" type="detail_saveClose"/> -->
+        <action id="closeAction" type="detail_close"/>
+    </actions>
+    <layout>
+        <formLayout id="form" dataContainer="workspaceRequestDc">
+            <datePicker id="dateField" property="date"/>
+            <textField id="hrManagerField" property="hrManager"/>
+            <entityPicker id="employeeField" property="employee">
+                <actions>
+                    <action id="entityLookup" type="entity_lookup"/>
+                    <action id="entityClear" type="entity_clear"/>
+                </actions>
+            </entityPicker>
+            <comboBox id="workTypeField" property="workType"/>
+        </formLayout>
+        <details id="softwareRequestsBox" summaryText="msg://com.company.demo.entity/WorkspaceRequest.softwareRequests"
+                 width="100%">
+            <hbox id="buttonsPanel" classNames="buttons-panel">
+                <button action="softwareRequestsDataGrid.create"/>
+                <button action="softwareRequestsDataGrid.edit"/>
+                <button action="softwareRequestsDataGrid.remove"/>
+            </hbox>
+            <dataGrid id="softwareRequestsDataGrid" dataContainer="softwareRequestsDc" width="100%" minHeight="20em">
+                <actions>
+                    <action id="create" type="list_create">
+                        <properties>
+                            <property name="openMode" value="DIALOG"/>
+                        </properties>
+                    </action>
+                    <action id="edit" type="list_edit">
+                        <properties>
+                            <property name="openMode" value="DIALOG"/>
+                        </properties>
+                    </action>
+                    <action id="remove" type="list_remove"/>
+                </actions>
+                <columns>
+                    <column property="permissionGranted"/>
+                    <column property="sortValue"/>
+                    <column property="software"/>
+                </columns>
+            </dataGrid>
+        </details>
+        <textArea id="processLogField" dataContainer="workspaceRequestDc" property="processLog"
+                  width="100%" label="msg://com.company.demo.entity/WorkspaceRequest.processLog"/>
+        <hbox id="detailActions">
+            <button id="completeBtn" text="OK" themeNames="primary"/>
+            <button id="closeBtn" action="closeAction"/>
+        </hbox>
+    </layout>
+</view>
