@@ -19,9 +19,9 @@ public interface HrManagerRole extends BpmProcessActorRole, BasicAppRole {
     @MenuPolicy(menuIds = {"User.list", "WorkspaceRequest.list", "Department.list"})
     @ViewPolicy(viewIds = {
             "User.list", "User.detail",
-            "WorkspaceRequest.list", "WorkspaceRequest.detail",
+            "WorkspaceRequest.list", "WorkspaceRequest.detail", "WorkspaceRequestReviewProcessForm",
             "Department.list", "Department.detail",
-            "SoftwareRequest.detail"})
+            "SoftwareRequest.detail", "SoftwareRequestProcessForm"})
     void views();
 
     @EntityAttributePolicy(entityClass = User.class, attributes = "*", action = EntityAttributePolicyAction.MODIFY)

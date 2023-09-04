@@ -18,7 +18,7 @@ public interface CoordinatorRole extends BpmProcessActorRole, BasicAppRole {
     String CODE = "coordinator";
 
     @MenuPolicy(menuIds = "WorkspaceRequest.list")
-    @ViewPolicy(viewIds = {"WorkspaceRequest.list", "WorkspaceRequest.detail"})
+    @ViewPolicy(viewIds = {"WorkspaceRequest.list", "WorkspaceRequest.detail", "WorkspaceRequestReviewProcessForm"})
     void screens();
 
     @EntityAttributePolicy(entityClass = Department.class, attributes = "*", action = EntityAttributePolicyAction.VIEW)

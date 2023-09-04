@@ -36,11 +36,11 @@
         <action id="closeAction" type="view_close"/>
     </actions>
     <layout>
-        <formLayout id="form" dataContainer="workspaceRequestDc">
-            <datePicker id="dateField" property="date" readOnly="true"/>
-            <textField id="hrManagerField" property="hrManager" readOnly="true"/>
-            <textField id="employeeField" property="employee" readOnly="true"/>
-            <comboBox id="workTypeField" property="workType" readOnly="true"/>
+        <formLayout id="form" dataContainer="workspaceRequestDc" width="30em" labelsPosition="ASIDE">
+            <datePicker id="dateField" property="date" readOnly="true" colspan="2"/>
+            <textField id="hrManagerField" property="hrManager" readOnly="true" colspan="2"/>
+            <textField id="employeeField" property="employee" readOnly="true" colspan="2"/>
+            <comboBox id="workTypeField" property="workType" readOnly="true" colspan="2"/>
         </formLayout>
         <hbox id="buttonsPanel" classNames="buttons-panel">
             <button action="softwareRequestsDataGrid.create"/>
@@ -62,8 +62,8 @@
                 <action id="remove" type="list_remove"/>
             </actions>
             <columns>
+                <column property="sortValue" header="#"/>
                 <column property="permissionGranted"/>
-                <column property="sortValue"/>
                 <column property="software"/>
             </columns>
         </dataGrid>
