@@ -16,12 +16,6 @@
         </navigationBar>
         <drawerLayout>
             <section id="section" classNames="jmix-main-view-section">
-                <div classNames="flex p-s">
-                    <image id="logoImage" resource="/icons/icon.png" themeNames="scale-down" classNames="icon-l self-center"/>
-                    <h2 id="applicationTitle"
-                        text="msg://applicationTitle.text"
-                        classNames="jmix-main-view-application-title whitespace-pre-wrap"/>
-                </div>
                 <nav id="navigation"
                      classNames="jmix-main-view-navigation"
                      ariaLabel="msg://navigation.ariaLabel">
