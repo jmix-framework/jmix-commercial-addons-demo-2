@@ -33,13 +33,6 @@ repositories {
                 password = rootProject['premiumRepoPass']
             }
         }
-        maven {
-            url = 'https://nexus.jmix.io/repository/premium'
-            credentials {
-                username = rootProject['premiumRepoUser']
-                password = rootProject['premiumRepoPass']
-            }
-        }
     }
 }
 
