@@ -60,6 +60,16 @@ dependencies {
     implementation 'io.jmix.businesscalendar:jmix-businesscalendar-flowui-starter'
     implementation 'io.jmix.businesscalendar:jmix-businesscalendar-starter'
 
+    implementation 'io.jmix.maps:jmix-maps-starter'
+    implementation 'io.jmix.maps:jmix-maps-flowui-starter'
+
+    implementation 'io.jmix.notifications:jmix-notifications-flowui-starter'
+    implementation 'io.jmix.notifications:jmix-notifications-starter'
+
+    implementation 'io.jmix.webdav:jmix-webdav-rest-starter'
+    implementation 'io.jmix.webdav:jmix-webdav-starter'
+    implementation 'io.jmix.webdav:jmix-webdav-flowui-starter'
+
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }

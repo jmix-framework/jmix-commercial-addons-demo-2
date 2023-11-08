@@ -72,7 +72,9 @@
       "construct-style-sheets-polyfill": "3.1.0",
       "date-fns": "2.29.3",
       "lit": "2.7.6",
-      "mobile-drag-drop": "2.3.0-rc.2"
+      "mobile-drag-drop": "2.3.0-rc.2",
+      "ol": "8.1.0",
+      "proj4": "2.9.0"
     },
     "devDependencies": {
       "@rollup/plugin-replace": "5.0.2",
@@ -92,7 +94,7 @@
       "workbox-core": "7.0.0",
       "workbox-precaching": "7.0.0"
     },
-    "hash": "72f75d782ae0e4c72a94a4e3b732b496633a9e79e3ff6d86d143c6b55428e77c"
+    "hash": "3ced50b34b254b1fc4fa4c9934d32016092be536f80650013e9fb4eefa058937"
   },
   "dependencies": {
     "@polymer/polymer": "3.5.1",
@@ -177,7 +179,9 @@
     "construct-style-sheets-polyfill": "3.1.0",
     "date-fns": "2.29.3",
     "lit": "2.7.6",
-    "mobile-drag-drop": "2.3.0-rc.2"
+    "mobile-drag-drop": "2.3.0-rc.2",
+    "ol": "8.1.0",
+    "proj4": "2.9.0"
   },
   "devDependencies": {
     "@rollup/plugin-replace": "5.0.2",

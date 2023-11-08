@@ -29,7 +29,7 @@ dependencies:
   '@vaadin/bundles':
     specifier: 24.1.9
     version: >-
-      24.1.9(@polymer/polymer@3.5.1)(@vaadin/a11y-base@24.1.9)(@vaadin/accordion@24.1.9)(@vaadin/app-layout@24.1.9)(@vaadin/avatar-group@24.1.9)(@vaadin/avatar@24.1.9)(@vaadin/board@23.3.0)(@vaadin/button@24.1.9)(@vaadin/charts@23.3.0)(@vaadin/checkbox-group@24.1.9)(@vaadin/checkbox@24.1.9)(@vaadin/combo-box@24.1.9)(@vaadin/component-base@24.1.9)(@vaadin/confirm-dialog@24.1.9)(@vaadin/context-menu@24.1.9)(@vaadin/cookie-consent@23.3.0)(@vaadin/crud@23.3.0)(@vaadin/custom-field@24.1.9)(@vaadin/date-picker@24.1.9)(@vaadin/date-time-picker@24.1.9)(@vaadin/details@24.1.9)(@vaadin/dialog@24.1.9)(@vaadin/email-field@24.1.9)(@vaadin/field-base@24.1.9)(@vaadin/field-highlighter@24.1.9)(@vaadin/form-layout@24.1.9)(@vaadin/grid-pro@23.3.0)(@vaadin/grid@24.1.9)(@vaadin/horizontal-layout@24.1.9)(@vaadin/icon@24.1.9)(@vaadin/icons@24.1.9)(@vaadin/input-container@24.1.9)(@vaadin/integer-field@24.1.9)(@vaadin/item@24.1.9)(@vaadin/list-box@24.1.9)(@vaadin/lit-renderer@24.1.9)(@vaadin/login@24.1.9)(@vaadin/map@23.3.0)(@vaadin/menu-bar@24.1.9)(@vaadin/message-input@24.1.9)(@vaadin/message-list@24.1.9)(@vaadin/multi-select-combo-box@24.1.9)(@vaadin/notification@24.1.9)(@vaadin/number-field@24.1.9)(@vaadin/overlay@24.1.9)(@vaadin/password-field@24.1.9)(@vaadin/polymer-legacy-adapter@24.1.9)(@vaadin/progress-bar@24.1.9)(@vaadin/radio-group@24.1.9)(@vaadin/rich-text-editor@23.3.0)(@vaadin/scroller@24.1.9)(@vaadin/select@24.1.9)(@vaadin/side-nav@24.1.9)(@vaadin/split-layout@24.1.9)(@vaadin/tabs@24.1.9)(@vaadin/tabsheet@24.1.9)(@vaadin/text-area@24.1.9)(@vaadin/text-field@24.1.9)(@vaadin/time-picker@24.1.9)(@vaadin/tooltip@24.1.9)(@vaadin/upload@24.1.9)(@vaadin/vaadin-development-mode-detector@2.0.6)(@vaadin/vaadin-lumo-styles@24.1.9)(@vaadin/vaadin-themable-mixin@24.1.9)(@vaadin/vaadin-usage-statistics@2.1.2)(@vaadin/vertical-layout@24.1.9)(@vaadin/virtual-list@24.1.9)(lit@2.7.6)
+      24.1.9(@polymer/polymer@3.5.1)(@vaadin/a11y-base@24.1.9)(@vaadin/accordion@24.1.9)(@vaadin/app-layout@24.1.9)(@vaadin/avatar-group@24.1.9)(@vaadin/avatar@24.1.9)(@vaadin/board@23.3.0)(@vaadin/button@24.1.9)(@vaadin/charts@23.3.0)(@vaadin/checkbox-group@24.1.9)(@vaadin/checkbox@24.1.9)(@vaadin/combo-box@24.1.9)(@vaadin/component-base@24.1.9)(@vaadin/confirm-dialog@24.1.9)(@vaadin/context-menu@24.1.9)(@vaadin/cookie-consent@23.3.0)(@vaadin/crud@23.3.0)(@vaadin/custom-field@24.1.9)(@vaadin/date-picker@24.1.9)(@vaadin/date-time-picker@24.1.9)(@vaadin/details@24.1.9)(@vaadin/dialog@24.1.9)(@vaadin/email-field@24.1.9)(@vaadin/field-base@24.1.9)(@vaadin/field-highlighter@24.1.9)(@vaadin/form-layout@24.1.9)(@vaadin/grid-pro@23.3.0)(@vaadin/grid@24.1.9)(@vaadin/horizontal-layout@24.1.9)(@vaadin/icon@24.1.9)(@vaadin/icons@24.1.9)(@vaadin/input-container@24.1.9)(@vaadin/integer-field@24.1.9)(@vaadin/item@24.1.9)(@vaadin/list-box@24.1.9)(@vaadin/lit-renderer@24.1.9)(@vaadin/login@24.1.9)(@vaadin/map@23.3.0)(@vaadin/menu-bar@24.1.9)(@vaadin/message-input@24.1.9)(@vaadin/message-list@24.1.9)(@vaadin/multi-select-combo-box@24.1.9)(@vaadin/notification@24.1.9)(@vaadin/number-field@24.1.9)(@vaadin/overlay@24.1.9)(@vaadin/password-field@24.1.9)(@vaadin/polymer-legacy-adapter@24.1.9)(@vaadin/progress-bar@24.1.9)(@vaadin/radio-group@24.1.9)(@vaadin/rich-text-editor@23.3.0)(@vaadin/scroller@24.1.9)(@vaadin/select@24.1.9)(@vaadin/side-nav@24.1.9)(@vaadin/split-layout@24.1.9)(@vaadin/tabs@24.1.9)(@vaadin/tabsheet@24.1.9)(@vaadin/text-area@24.1.9)(@vaadin/text-field@24.1.9)(@vaadin/time-picker@24.1.9)(@vaadin/tooltip@24.1.9)(@vaadin/upload@24.1.9)(@vaadin/vaadin-development-mode-detector@2.0.6)(@vaadin/vaadin-lumo-styles@24.1.9)(@vaadin/vaadin-themable-mixin@24.1.9)(@vaadin/vaadin-usage-statistics@2.1.2)(@vaadin/vertical-layout@24.1.9)(@vaadin/virtual-list@24.1.9)(lit@2.7.6)(ol@8.1.0)
   '@vaadin/button':
     specifier: 24.1.9
     version: 24.1.9
@@ -255,6 +255,12 @@ dependencies:
   mobile-drag-drop:
     specifier: 2.3.0-rc.2
     version: 2.3.0-rc.2
+  ol:
+    specifier: 8.1.0
+    version: 8.1.0
+  proj4:
+    specifier: 2.9.0
+    version: 2.9.0
 
 devDependencies:
   '@rollup/plugin-replace':
@@ -1754,33 +1760,6 @@ packages:
       '@lit-labs/ssr-dom-shim': 1.1.2
     dev: false
 
-  /@mapbox/jsonlint-lines-primitives@2.0.2:
-    resolution: {integrity: sha512-rY0o9A5ECsTQRVhv7tL/OyDpGAoUB4tTvLiW1DSzQGq4bvTPhNw1VpSNjDJc5GFZ2XuyOtSWSVN05qOtcD71qQ==}
-    engines: {node: '>= 0.6'}
-    dev: false
-
-  /@mapbox/mapbox-gl-style-spec@13.28.0:
-    resolution: {integrity: sha512-B8xM7Fp1nh5kejfIl4SWeY0gtIeewbuRencqO3cJDrCHZpaPg7uY+V8abuR+esMeuOjRl5cLhVTP40v+1ywxbg==}
-    hasBin: true
-    dependencies:
-      '@mapbox/jsonlint-lines-primitives': 2.0.2
-      '@mapbox/point-geometry': 0.1.0
-      '@mapbox/unitbezier': 0.0.0
-      csscolorparser: 1.0.3
-      json-stringify-pretty-compact: 2.0.0
-      minimist: 1.2.8
-      rw: 1.3.3
-      sort-object: 0.3.2
-    dev: false
-
-  /@mapbox/point-geometry@0.1.0:
-    resolution: {integrity: sha512-6j56HdLTwWGO0fJPlrZtdU/B13q8Uwmo18Ck2GnGgN9PCFyKTZ3UbXeEdRFh18i9XQ92eH2VdtpJHpBD3aripQ==}
-    dev: false
-
-  /@mapbox/unitbezier@0.0.0:
-    resolution: {integrity: sha512-HPnRdYO0WjFjRTSwO3frz1wKaU649OBFPX3Zo/2WZvuRi6zMiRGui8SnPQiQABgqCf8YikDe5t3HViTVw1WUzA==}
-    dev: false
-
   /@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -1976,7 +1955,7 @@ packages:
       '@vaadin/component-base': 24.1.9
     dev: false
 
-  ? /@vaadin/bundles@24.1.9(@polymer/polymer@3.5.1)(@vaadin/a11y-base@24.1.9)(@vaadin/accordion@24.1.9)(@vaadin/app-layout@24.1.9)(@vaadin/avatar-group@24.1.9)(@vaadin/avatar@24.1.9)(@vaadin/board@23.3.0)(@vaadin/button@24.1.9)(@vaadin/charts@23.3.0)(@vaadin/checkbox-group@24.1.9)(@vaadin/checkbox@24.1.9)(@vaadin/combo-box@24.1.9)(@vaadin/component-base@24.1.9)(@vaadin/confirm-dialog@24.1.9)(@vaadin/context-menu@24.1.9)(@vaadin/cookie-consent@23.3.0)(@vaadin/crud@23.3.0)(@vaadin/custom-field@24.1.9)(@vaadin/date-picker@24.1.9)(@vaadin/date-time-picker@24.1.9)(@vaadin/details@24.1.9)(@vaadin/dialog@24.1.9)(@vaadin/email-field@24.1.9)(@vaadin/field-base@24.1.9)(@vaadin/field-highlighter@24.1.9)(@vaadin/form-layout@24.1.9)(@vaadin/grid-pro@23.3.0)(@vaadin/grid@24.1.9)(@vaadin/horizontal-layout@24.1.9)(@vaadin/icon@24.1.9)(@vaadin/icons@24.1.9)(@vaadin/input-container@24.1.9)(@vaadin/integer-field@24.1.9)(@vaadin/item@24.1.9)(@vaadin/list-box@24.1.9)(@vaadin/lit-renderer@24.1.9)(@vaadin/login@24.1.9)(@vaadin/map@23.3.0)(@vaadin/menu-bar@24.1.9)(@vaadin/message-input@24.1.9)(@vaadin/message-list@24.1.9)(@vaadin/multi-select-combo-box@24.1.9)(@vaadin/notification@24.1.9)(@vaadin/number-field@24.1.9)(@vaadin/overlay@24.1.9)(@vaadin/password-field@24.1.9)(@vaadin/polymer-legacy-adapter@24.1.9)(@vaadin/progress-bar@24.1.9)(@vaadin/radio-group@24.1.9)(@vaadin/rich-text-editor@23.3.0)(@vaadin/scroller@24.1.9)(@vaadin/select@24.1.9)(@vaadin/side-nav@24.1.9)(@vaadin/split-layout@24.1.9)(@vaadin/tabs@24.1.9)(@vaadin/tabsheet@24.1.9)(@vaadin/text-area@24.1.9)(@vaadin/text-field@24.1.9)(@vaadin/time-picker@24.1.9)(@vaadin/tooltip@24.1.9)(@vaadin/upload@24.1.9)(@vaadin/vaadin-development-mode-detector@2.0.6)(@vaadin/vaadin-lumo-styles@24.1.9)(@vaadin/vaadin-themable-mixin@24.1.9)(@vaadin/vaadin-usage-statistics@2.1.2)(@vaadin/vertical-layout@24.1.9)(@vaadin/virtual-list@24.1.9)(lit@2.7.6)
+  ? /@vaadin/bundles@24.1.9(@polymer/polymer@3.5.1)(@vaadin/a11y-base@24.1.9)(@vaadin/accordion@24.1.9)(@vaadin/app-layout@24.1.9)(@vaadin/avatar-group@24.1.9)(@vaadin/avatar@24.1.9)(@vaadin/board@23.3.0)(@vaadin/button@24.1.9)(@vaadin/charts@23.3.0)(@vaadin/checkbox-group@24.1.9)(@vaadin/checkbox@24.1.9)(@vaadin/combo-box@24.1.9)(@vaadin/component-base@24.1.9)(@vaadin/confirm-dialog@24.1.9)(@vaadin/context-menu@24.1.9)(@vaadin/cookie-consent@23.3.0)(@vaadin/crud@23.3.0)(@vaadin/custom-field@24.1.9)(@vaadin/date-picker@24.1.9)(@vaadin/date-time-picker@24.1.9)(@vaadin/details@24.1.9)(@vaadin/dialog@24.1.9)(@vaadin/email-field@24.1.9)(@vaadin/field-base@24.1.9)(@vaadin/field-highlighter@24.1.9)(@vaadin/form-layout@24.1.9)(@vaadin/grid-pro@23.3.0)(@vaadin/grid@24.1.9)(@vaadin/horizontal-layout@24.1.9)(@vaadin/icon@24.1.9)(@vaadin/icons@24.1.9)(@vaadin/input-container@24.1.9)(@vaadin/integer-field@24.1.9)(@vaadin/item@24.1.9)(@vaadin/list-box@24.1.9)(@vaadin/lit-renderer@24.1.9)(@vaadin/login@24.1.9)(@vaadin/map@23.3.0)(@vaadin/menu-bar@24.1.9)(@vaadin/message-input@24.1.9)(@vaadin/message-list@24.1.9)(@vaadin/multi-select-combo-box@24.1.9)(@vaadin/notification@24.1.9)(@vaadin/number-field@24.1.9)(@vaadin/overlay@24.1.9)(@vaadin/password-field@24.1.9)(@vaadin/polymer-legacy-adapter@24.1.9)(@vaadin/progress-bar@24.1.9)(@vaadin/radio-group@24.1.9)(@vaadin/rich-text-editor@23.3.0)(@vaadin/scroller@24.1.9)(@vaadin/select@24.1.9)(@vaadin/side-nav@24.1.9)(@vaadin/split-layout@24.1.9)(@vaadin/tabs@24.1.9)(@vaadin/tabsheet@24.1.9)(@vaadin/text-area@24.1.9)(@vaadin/text-field@24.1.9)(@vaadin/time-picker@24.1.9)(@vaadin/tooltip@24.1.9)(@vaadin/upload@24.1.9)(@vaadin/vaadin-development-mode-detector@2.0.6)(@vaadin/vaadin-lumo-styles@24.1.9)(@vaadin/vaadin-themable-mixin@24.1.9)(@vaadin/vaadin-usage-statistics@2.1.2)(@vaadin/vertical-layout@24.1.9)(@vaadin/virtual-list@24.1.9)(lit@2.7.6)(ol@8.1.0)
   : resolution: {integrity: sha512-Q9Q1XFWDLDrp/49Kbhj4dwx2fSGvNZHOE0I/nclrc1u7KLptB/Kcp3Sa81CmMRdeue4LARhxE2jfbooB7Sm5Xg==}
     peerDependencies:
       '@open-wc/dedupe-mixin': 1.3.1
@@ -2271,6 +2250,7 @@ packages:
       '@vaadin/vertical-layout': 24.1.9
       '@vaadin/virtual-list': 24.1.9
       lit: 2.7.6
+      ol: 8.1.0
     dev: false
 
   /@vaadin/button@24.1.9:
@@ -2663,7 +2643,7 @@ packages:
       '@vaadin/vaadin-lumo-styles': 24.1.9
       '@vaadin/vaadin-material-styles': 24.1.9
       '@vaadin/vaadin-themable-mixin': 24.1.9
-      ol: 6.13.0
+      ol: 8.1.0
     dev: false
 
   /@vaadin/menu-bar@24.1.9:
@@ -3449,10 +3429,6 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /csscolorparser@1.0.3:
-    resolution: {integrity: sha512-umPSgYwZkdFoUrH5hIq5kf0wPSXiro51nPw0j2K/c83KflkPSTBGMz6NJvMB+07VlL0y7VPo6QJcDjcgKTTm3w==}
-    dev: false
-
   /dash-ast@1.0.0:
     resolution: {integrity: sha512-Vy4dx7gquTeMcQR/hDkYLGUnwVil6vk4FOOct+djUnHOUWt+zJPJAaRIXaAFkPXtJjvlY7o3rfRu0/3hpnwoUA==}
     dev: true
@@ -3533,6 +3509,10 @@ packages:
 
   /domify@1.4.1:
     resolution: {integrity: sha512-x18nuiDHMCZGXr4KJSRMf/TWYtiaRo6RX8KN9fEbW54mvbQ6pieUuerC2ahBg+kEp1wycFj8MPUI0WkIOw5E9w==}
+    dev: false
+
+  /earcut@2.2.4:
+    resolution: {integrity: sha512-/pjZsA1b4RPHbeWZQn66SWS8nZZWLQQ23oE3Eam7aroEFGEvwKAsJfZ9ytiEMycfzXWpca4FA9QIOehf7PocBQ==}
     dev: false
 
   /ejs@3.1.9:
@@ -4152,10 +4132,6 @@ packages:
     resolution: {integrity: sha512-es94M3nTIfsEPisRafak+HDLfHXnKBhV3vU5eqPcS3flIWqcxJWgXHXiey3YrpaNsanY5ei1VoYEbOzijuq9BA==}
     dev: true
 
-  /json-stringify-pretty-compact@2.0.0:
-    resolution: {integrity: sha512-WRitRfs6BGq4q8gTgOy4ek7iPFXjbra0H3PmDLKm2xnZ+Gh1HUhiKGgCZkSPNULlP7mvfu6FV/mOLhCarspADQ==}
-    dev: false
-
   /json5@2.2.3:
     resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
     engines: {node: '>=6'}
@@ -4254,10 +4230,6 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
 
-  /mapbox-to-css-font@2.4.2:
-    resolution: {integrity: sha512-f+NBjJJY4T3dHtlEz1wCG7YFlkODEjFIYlxDdLIDMNpkSksqTt+l/d4rjuwItxuzkuMFvPyrjzV2lxRM4ePcIA==}
-    dev: false
-
   /merge-source-map@1.0.4:
     resolution: {integrity: sha512-PGSmS0kfnTnMJCzJ16BLLCEe6oeYCamKFFdQKshi4BmM6FUwipjVOcBFGxqtQtirtAG4iZvHlqST9CpZKqlRjA==}
     dependencies:
@@ -4272,6 +4244,10 @@ packages:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
     dev: true
+
+  /mgrs@1.0.0:
+    resolution: {integrity: sha512-awNbTOqCxK1DBGjalK3xqWIstBZgN6fxsMSiXLs9/spqWkF2pAhb2rrYCFSsr1/tT7PhcDGjZndG8SWYn0byYA==}
+    dev: false
 
   /micromatch@4.0.5:
     resolution: {integrity: sha512-DMy+ERcEW2q8Z2Po+WNXuw3c5YaUSFjAO5GsJqfEl7UjvtIuFKO6ZrKvcItdy98dwFI2N1tg3zNIdKaQT+aNdA==}
@@ -4305,10 +4281,6 @@ packages:
     dependencies:
       brace-expansion: 2.0.1
     dev: true
-
-  /minimist@1.2.8:
-    resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
-    dev: false
 
   /mkdirp@1.0.4:
     resolution: {integrity: sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==}
@@ -4399,19 +4371,11 @@ packages:
       object-keys: 1.1.1
     dev: true
 
-  /ol-mapbox-style@7.1.1:
-    resolution: {integrity: sha512-GLTEYiH/Ec9Zn1eS4S/zXyR2sierVrUc+OLVP8Ra0FRyqRhoYbXdko0b7OIeSHWdtJfHssWYefDOGxfTRUUZ/A==}
+  /ol@8.1.0:
+    resolution: {integrity: sha512-cx3SH2plpFS9fM8pp1nCypgQXGJD7Mcb1E3mEySmy5XEw1DUEo+kkNzgtAZz5qupekqi7aU9iBJEjCoMfqvO2Q==}
     dependencies:
-      '@mapbox/mapbox-gl-style-spec': 13.28.0
-      mapbox-to-css-font: 2.4.2
-      webfont-matcher: 1.1.0
-    dev: false
-
-  /ol@6.13.0:
-    resolution: {integrity: sha512-Fa6yt+FArWE9fwYRRhi/8+ULcFDRS2ZuDcLp3R9bQeDVa5T4E4TT9iqLeJhmHG+bzWiLWJHIeFUqw8GD2gW0YA==}
-    dependencies:
+      earcut: 2.2.4
       geotiff: 2.1.0
-      ol-mapbox-style: 7.1.1
       pbf: 3.2.1
       rbush: 3.0.1
     dev: false
@@ -4500,6 +4464,13 @@ packages:
     resolution: {integrity: sha512-66hKPCr+72mlfiSjlEB1+45IjXSqvVAIy6mocupoww4tBFE9R9IhwwUGoI4G++Tc9Aq+2rxOt0RFU6gPcrte0A==}
     engines: {node: '>= 0.8'}
     dev: true
+
+  /proj4@2.9.0:
+    resolution: {integrity: sha512-BoDXEzCVnRJVZoOKA0QHTFtYoE8lUxtX1jST38DJ8U+v1ixY70Kpwi0Llu6YqSWEH2xqu4XMEBNGcgeRIEywoA==}
+    dependencies:
+      mgrs: 1.0.0
+      wkt-parser: 1.3.3
+    dev: false
 
   /protocol-buffers-schema@3.6.0:
     resolution: {integrity: sha512-TdDRD+/QNdrCGCE7v8340QyuXd4kIWIgapsE2+n/SaGiSSbomYl4TjHlvIoCWRpE7wFt02EpB35VVA2ImcBVqw==}
@@ -4687,10 +4658,6 @@ packages:
       queue-microtask: 1.2.3
     dev: true
 
-  /rw@1.3.3:
-    resolution: {integrity: sha512-PdhdWy89SiZogBLaw42zdeqtRJ//zFd2PgQavcICDUgJT5oW10QCRKbJ6bg4r0/UY2M6BWd5tkxuGFRvCkgfHQ==}
-    dev: false
-
   /safe-array-concat@1.0.1:
     resolution: {integrity: sha512-6XbUAseYE2KtOuGueyeobCySj9L4+66Tn6KQMOPQJrAJEowYKW/YR/MGJZl7FdydUdaFu4LYyDZjxf4/Nmo23Q==}
     engines: {node: '>=0.4'}
@@ -4762,24 +4729,6 @@ packages:
       get-intrinsic: 1.2.2
       object-inspect: 1.13.1
     dev: true
-
-  /sort-asc@0.1.0:
-    resolution: {integrity: sha512-jBgdDd+rQ+HkZF2/OHCmace5dvpos/aWQpcxuyRs9QUbPRnkEJmYVo81PIGpjIdpOcsnJ4rGjStfDHsbn+UVyw==}
-    engines: {node: '>=0.10.0'}
-    dev: false
-
-  /sort-desc@0.1.1:
-    resolution: {integrity: sha512-jfZacW5SKOP97BF5rX5kQfJmRVZP5/adDUTY8fCSPvNcXDVpUEe2pr/iKGlcyZzchRJZrswnp68fgk3qBXgkJw==}
-    engines: {node: '>=0.10.0'}
-    dev: false
-
-  /sort-object@0.3.2:
-    resolution: {integrity: sha512-aAQiEdqFTTdsvUFxXm3umdo04J7MRljoVGbBlkH7BgNsMvVNAJyGj7C/wV1A8wHWAJj/YikeZbfuCKqhggNWGA==}
-    engines: {node: '>=0.10.0'}
-    dependencies:
-      sort-asc: 0.1.0
-      sort-desc: 0.1.1
-    dev: false
 
   /source-map-js@1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
@@ -5246,10 +5195,6 @@ packages:
     resolution: {integrity: sha512-PgF341avzqyx60neE9DD+XS26MMNMoUQRz9NOZwW32nPQrF6p77f1htcnjBSEV8BGMKZ16choqUG4hyI0Hx7mA==}
     dev: false
 
-  /webfont-matcher@1.1.0:
-    resolution: {integrity: sha512-ov8lMvF9wi4PD7fK2Axn9PQEpO9cYI0fIoGqErwd+wi8xacFFDmX114D5Q2Lw0Wlgmb+Qw/dKI2KTtimrJf85g==}
-    dev: false
-
   /webidl-conversions@4.0.2:
     resolution: {integrity: sha512-YQ+BmxuTgd6UXZW3+ICGfyqRyHXVlD5GtQr5+qjiNW7bF0cqrzX500HVXPBOvgXb5YnzDd+h0zqyv61KUD7+Sg==}
     dev: true
@@ -5282,6 +5227,10 @@ packages:
       gopd: 1.0.1
       has-tostringtag: 1.0.0
     dev: true
+
+  /wkt-parser@1.3.3:
+    resolution: {integrity: sha512-ZnV3yH8/k58ZPACOXeiHaMuXIiaTk1t0hSUVisbO0t4RjA5wPpUytcxeyiN2h+LZRrmuHIh/1UlrR9e7DHDvTw==}
+    dev: false
 
   /workbox-background-sync@7.0.0:
     resolution: {integrity: sha512-S+m1+84gjdueM+jIKZ+I0Lx0BDHkk5Nu6a3kTVxP4fdj3gKouRNmhO8H290ybnJTOPfBDtTMXSQA/QLTvr7PeA==}
