@@ -7,7 +7,6 @@ import com.company.demo.view.main.MainView;
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.router.Route;
-import io.jmix.bpmflowui.processform.annotation.ProcessForm;
 import io.jmix.core.EntityStates;
 import io.jmix.core.TimeSource;
 import io.jmix.core.common.util.ParamsMap;
@@ -26,7 +25,6 @@ import java.util.Map;
 @ViewController("WorkspaceRequest.detail")
 @ViewDescriptor("workspace-request-detail-view.xml")
 @EditedEntityContainer("workspaceRequestDc")
-@ProcessForm(allowedProcessKeys = {"workspace-preparation"})
 public class WorkspaceRequestDetailView extends StandardDetailView<WorkspaceRequest> {
 
     @Autowired

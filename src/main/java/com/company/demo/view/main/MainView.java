@@ -56,12 +56,11 @@ public class MainView extends StandardMainView {
         User user = (User) currentUserSubstitution.getEffectiveUser();
         sb.append(messageBundle.formatMessage("user", metadataTools.getInstanceName(user)));
 
-        String key = "role-";
         user.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
-                .forEach(role -> {
-                    String message = messageBundle.formatMessage(key + role);
-                    if (!message.equals(key + role)) {
+                .forEach(authority -> {
+                    String message = messageBundle.formatMessage(authority);
+                    if (!message.equals(authority)) {
                         sb.append(message);
                     }
                 });

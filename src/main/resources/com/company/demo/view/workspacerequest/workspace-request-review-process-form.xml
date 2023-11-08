@@ -35,10 +35,18 @@
     </actions>
     <layout>
         <formLayout id="form" dataContainer="workspaceRequestDc" width="30em" labelsPosition="ASIDE">
-            <datePicker id="dateField" property="date" readOnly="true" colspan="2"/>
-            <textField id="hrManagerField" property="hrManager" readOnly="true" colspan="2"/>
-            <textField id="employeeField" property="employee" readOnly="true" colspan="2"/>
-            <comboBox id="workTypeField" property="workType" readOnly="true" colspan="2"/>
+            <formItem>
+                <datePicker id="dateField" property="date" readOnly="true" colspan="2"/>
+            </formItem>
+            <formItem>
+                <textField id="hrManagerField" property="hrManager" readOnly="true" colspan="2"/>
+            </formItem>
+            <formItem>
+                <textField id="employeeField" property="employee" readOnly="true" colspan="2"/>
+            </formItem>
+            <formItem>
+                <comboBox id="workTypeField" property="workType" readOnly="true" colspan="2"/>
+            </formItem>
         </formLayout>
         <details id="softwareRequestsDetails" opened="true" width="100%"
                  summaryText="msg://com.company.demo.entity/WorkspaceRequest.softwareRequests">

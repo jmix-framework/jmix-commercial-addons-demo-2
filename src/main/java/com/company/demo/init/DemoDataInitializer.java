@@ -153,12 +153,6 @@ public class DemoDataInitializer {
             roleAssignment.setRoleType(RoleAssignmentRoleType.RESOURCE);
             dataManager.save(roleAssignment);
 
-            roleAssignment = dataManager.create(RoleAssignmentEntity.class);
-            roleAssignment.setUsername(user.getUsername());
-            roleAssignment.setRoleCode("notifications-in-app-notifications-user");
-            roleAssignment.setRoleType(RoleAssignmentRoleType.RESOURCE);
-            dataManager.save(roleAssignment);
-
             String roleCode = getUserRole(user);
             if (roleCode != null) {
                 roleAssignment = dataManager.create(RoleAssignmentEntity.class);

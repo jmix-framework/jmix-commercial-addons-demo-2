@@ -26,15 +26,23 @@
     </actions>
     <layout>
         <formLayout id="form" dataContainer="workspaceRequestDc" width="30em" labelsPosition="ASIDE">
-            <datePicker id="dateField" property="date" colspan="2"/>
-            <textField id="hrManagerField" property="hrManager" colspan="2"/>
-            <entityPicker id="employeeField" property="employee" colspan="2">
-                <actions>
-                    <action id="entityLookup" type="entity_lookup"/>
-                    <action id="entityClear" type="entity_clear"/>
-                </actions>
-            </entityPicker>
-            <comboBox id="workTypeField" property="workType" colspan="2"/>
+            <formItem>
+                <datePicker id="dateField" property="date" colspan="2"/>
+            </formItem>
+            <formItem>
+                <textField id="hrManagerField" property="hrManager" colspan="2"/>
+            </formItem>
+            <formItem>
+                <entityPicker id="employeeField" property="employee" colspan="2">
+                    <actions>
+                        <action id="entityLookup" type="entity_lookup"/>
+                        <action id="entityClear" type="entity_clear"/>
+                    </actions>
+                </entityPicker>
+            </formItem>
+            <formItem>
+                <comboBox id="workTypeField" property="workType" colspan="2"/>
+            </formItem>
         </formLayout>
         <details id="softwareRequestsBox" summaryText="msg://com.company.demo.entity/WorkspaceRequest.softwareRequests"
                  width="100%" opened="true">

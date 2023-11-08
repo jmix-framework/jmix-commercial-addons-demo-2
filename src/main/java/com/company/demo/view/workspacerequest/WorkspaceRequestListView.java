@@ -11,6 +11,7 @@ import io.jmix.flowui.ViewNavigators;
 import io.jmix.flowui.component.grid.DataGrid;
 import io.jmix.flowui.kit.component.button.JmixButton;
 import io.jmix.flowui.view.*;
+import io.jmix.security.role.RoleGrantedAuthorityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 
@@ -29,6 +30,8 @@ public class WorkspaceRequestListView extends StandardListView<WorkspaceRequest>
     private DataGrid<WorkspaceRequest> workspaceRequestsDataGrid;
     @ViewComponent
     private JmixButton startProcessBtn;
+    @Autowired
+    private RoleGrantedAuthorityUtils roleGrantedAuthorityUtils;
 
     @Subscribe
     public void onInit(final InitEvent event) {
@@ -37,7 +40,7 @@ public class WorkspaceRequestListView extends StandardListView<WorkspaceRequest>
         // Enable starting process if the user has "HR Manager" role
         boolean isHrManager = user.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
-                .anyMatch(name -> name.equals(HrManagerRole.CODE));
+                .anyMatch(name -> name.equals(roleGrantedAuthorityUtils.getDefaultRolePrefix() + HrManagerRole.CODE));
         startProcessBtn.setEnabled(isHrManager);
     }
 
