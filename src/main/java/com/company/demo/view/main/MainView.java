@@ -27,7 +27,7 @@ public class MainView extends StandardMainView {
 
     @Autowired
     private CurrentUserSubstitution currentUserSubstitution;
-    @Autowired
+    @ViewComponent
     private MessageBundle messageBundle;
     @Autowired
     private MetadataTools metadataTools;
