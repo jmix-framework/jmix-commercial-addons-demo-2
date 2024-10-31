@@ -73,6 +73,10 @@ dependencies {
     implementation 'io.jmix.webdav:jmix-webdav-starter'
     implementation 'io.jmix.webdav:jmix-webdav-flowui-starter'
 
+    implementation 'io.jmix.kanban:jmix-kanban-flowui-starter'
+
+    implementation 'io.jmix.uiconstraints:jmix-uiconstraints-starter'
+
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
