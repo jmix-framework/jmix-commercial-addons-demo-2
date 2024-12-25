@@ -1,6 +1,7 @@
 plugins {
     id 'io.jmix' version '2.4.2'
     id 'java'
+    id 'org.jetbrains.gradle.plugin.idea-ext' version '1.1.9'
 }
 
 apply plugin: 'org.springframework.boot'
@@ -86,8 +87,19 @@ dependencies {
 configurations.implementation {
     exclude group: 'com.vaadin', module: 'hilla'
     exclude group: 'com.vaadin', module: 'hilla-dev'
+    exclude group: 'com.vaadin', module: 'copilot'
 }
 
 test {
     useJUnitPlatform()
+}
+
+idea {
+    module {
+        excludeDirs.addAll(files '.jmix', 'node_modules', 'src/main/frontend/generated/', 'src/main/bundles')
+    }
+}
+
+vaadin {
+    optimizeBundle = false
 }

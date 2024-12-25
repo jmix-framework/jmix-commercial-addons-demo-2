@@ -4,9 +4,11 @@ This project includes the following Jmix commercial add-ons:
 
 - [BPM](https://www.jmix.io/marketplace/bpm/)
 - [Business Calendars](https://www.jmix.io/marketplace/business-calendars/)
-- [WebDAV](https://www.jmix.io/marketplace/webdav/)
+- [Kanban](https://www.jmix.io/marketplace/kanban/)
 - [Maps](https://www.jmix.io/marketplace/maps/)
 - [Notifications](https://www.jmix.io/marketplace/notifications/)
+- [UI Constraints](https://www.jmix.io/marketplace/ui-constraints/)
+- [WebDAV](https://www.jmix.io/marketplace/webdav/)
 
 ## Demo Data and Process
 
