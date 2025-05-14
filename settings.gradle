@@ -1,1 +1,9 @@
 rootProject.name = 'jmix-commercial-addons-demo-2'
+
+includeBuild 'demo/bpm'
+includeBuild 'demo/business-calendars'
+includeBuild 'demo/kanban'
+includeBuild 'demo/maps'
+includeBuild 'demo/notifications'
+includeBuild 'demo/uiconstraints'
+includeBuild 'demo/webdav'
