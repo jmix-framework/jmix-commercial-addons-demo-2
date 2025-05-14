@@ -1,24 +1,17 @@
 package com.company.bpm.view.main;
 
 import com.company.bpm.entity.User;
-import com.vaadin.flow.component.Component;
-import com.vaadin.flow.component.Html;
-import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Section;
 import com.vaadin.flow.router.Route;
-import com.vaadin.flow.router.RouterLink;
 import io.jmix.core.MetadataTools;
 import io.jmix.core.usersubstitution.CurrentUserSubstitution;
-import io.jmix.flowui.UiComponents;
 import io.jmix.flowui.app.main.StandardMainView;
-import io.jmix.flowui.component.applayout.JmixAppLayout;
-import io.jmix.flowui.component.image.JmixImage;
-import io.jmix.flowui.component.image.JmixImageVariant;
 import io.jmix.flowui.view.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 
-import static com.vaadin.flow.theme.lumo.LumoUtility.*;
+import static com.vaadin.flow.theme.lumo.LumoUtility.Padding;
 
 @Route("")
 @ViewController("MainView")
@@ -31,27 +24,18 @@ public class MainView extends StandardMainView {
     private MessageBundle messageBundle;
     @Autowired
     private MetadataTools metadataTools;
-    @Autowired
-    protected UiComponents uiComponents;
-
     @ViewComponent
     protected Section section;
-
-    @Subscribe
-    protected void onInit(final InitEvent event) {
-        section.addComponentAsFirst(createMainViewRouterlink());
-    }
+    @ViewComponent
+    private Div welcomeMessage;
 
     @Subscribe
     public void onReady(final ReadyEvent event) {
-        JmixAppLayout content = getContent();
-        if (getContent().getContent() == null) {
-            content.setContent(buildWelcomeContent());
-        }
+        buildWelcomeMessage();
     }
 
-    protected Component buildWelcomeContent() {
-        StringBuilder sb = new StringBuilder("<div>");
+    private void buildWelcomeMessage() {
+        StringBuilder sb = new StringBuilder();
 
         User user = (User) currentUserSubstitution.getEffectiveUser();
         sb.append(messageBundle.formatMessage("user", metadataTools.getInstanceName(user)));
@@ -66,28 +50,8 @@ public class MainView extends StandardMainView {
                 });
 
         sb.append(messageBundle.getMessage("end-note"));
-        sb.append("</div>");
-        Html html = new Html(sb.toString());
-        html.addClassName(Padding.MEDIUM);
-        return html;
-    }
 
-    protected RouterLink createMainViewRouterlink() {
-        RouterLink link = uiComponents.create(RouterLink.class);
-        link.setRoute(MainView.class);
-        link.addClassNames("jmix-main-view-header-link", Display.FLEX, Padding.SMALL);
-
-        JmixImage<String> image = uiComponents.create(JmixImage.class);
-        image.setSrc("/icons/icon.png");
-        image.addThemeVariants(JmixImageVariant.SCALE_DOWN);
-        image.addClassNames(IconSize.LARGE, AlignSelf.CENTER);
-
-        H2 header = uiComponents.create(H2.class);
-        header.setText(messageBundle.getMessage("applicationTitle.text"));
-        header.addClassNames("jmix-main-view-application-title", Whitespace.PRE_WRAP);
-
-        link.add(image, header);
-
-        return link;
+        welcomeMessage.getElement().setProperty("innerHTML", sb.toString());
+        welcomeMessage.addClassName(Padding.MEDIUM);
     }
 }
