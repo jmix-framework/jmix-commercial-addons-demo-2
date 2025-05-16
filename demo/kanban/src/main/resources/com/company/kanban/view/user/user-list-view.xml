@@ -58,6 +58,7 @@
                 <action id="showUserSubstitutionsAction" type="sec_showUserSubstitutions"/>
             </actions>
             <columns resizable="true">
+                <column key="picture" sortable="false" flexGrow="0" resizable="false"/>
                 <column property="username"/>
                 <column property="firstName"/>
                 <column property="lastName"/>

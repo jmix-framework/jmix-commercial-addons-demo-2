@@ -1,5 +1,6 @@
 package com.company.kanban.entity;
 
+import io.jmix.core.FileRef;
 import io.jmix.core.HasTimeZone;
 import io.jmix.core.annotation.Secret;
 import io.jmix.core.entity.annotation.JmixGeneratedValue;
@@ -54,6 +55,9 @@ public class User implements JmixUserDetails, HasTimeZone {
 
     @Column(name = "TIME_ZONE_ID")
     private String timeZoneId;
+
+    @Column(name = "PICTURE", length = 1024)
+    private FileRef picture;
 
     @Transient
     private Collection<? extends GrantedAuthority> authorities;
@@ -172,5 +176,13 @@ public class User implements JmixUserDetails, HasTimeZone {
 
     public void setTimeZoneId(final String timeZoneId) {
         this.timeZoneId = timeZoneId;
+    }
+
+    public FileRef getPicture() {
+        return picture;
+    }
+
+    public void setPicture(FileRef picture) {
+        this.picture = picture;
     }
 }
