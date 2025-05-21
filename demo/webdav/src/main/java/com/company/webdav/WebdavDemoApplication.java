@@ -49,7 +49,7 @@ public class WebdavDemoApplication implements AppShellConfigurator {
     @EventListener
     public void printApplicationUrl(final ApplicationStartedEvent event) {
         LoggerFactory.getLogger(WebdavDemoApplication.class).info("Application started at "
-                + "http://localhost:"
+                + "http://localhost:" // Change to https after completing configuration at https://docs.jmix.io/jmix/webdav/configuration.html#https
                 + environment.getProperty("local.server.port")
                 + Strings.nullToEmpty(environment.getProperty("server.servlet.context-path")));
     }
