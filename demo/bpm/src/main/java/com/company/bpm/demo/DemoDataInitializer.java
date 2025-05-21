@@ -1,4 +1,4 @@
-package com.company.bpm.init;
+package com.company.bpm.demo;
 
 import com.company.bpm.entity.Department;
 import com.company.bpm.entity.Software;

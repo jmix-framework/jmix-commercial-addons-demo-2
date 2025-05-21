@@ -49,9 +49,6 @@ public class MainView extends StandardMainView {
                     }
                 });
 
-        sb.append(messageBundle.getMessage("end-note"));
-
         welcomeMessage.getElement().setProperty("innerHTML", sb.toString());
-        welcomeMessage.addClassName(Padding.MEDIUM);
     }
 }

@@ -1,8 +1,8 @@
 # Jmix BPM Demo
 
-## Demo Data and Process
+## Overview
 
-The project contains the data model, UI and BPMN definition demonstrating the process of preparing the workspace for new employees. The process involves functionality of BPM add-on.
+The project contains the data model, UI and BPMN definition demonstrating the process of preparing the workspace for new employees. The process involves functionality of the BPM add-on.
 
 The data model consists of the following entities:
 
@@ -29,21 +29,26 @@ Below is a brief description of the [business process](doc/workspace-preparation
 
 ## Demo Scenario
 
-1. Run the application
-2. Login as `alice` with password `1`. You are an HR manager and you can start workspace preparation processes.
-   1. Open _Application -> Workspace requests_
+1. Run the application and go to <http://localhost:8101> in your browser.
+2. Log in as `alice` with password `1`. You are an HR manager and you can start workspace preparation processes.
+   1. Open _Application → Workspace requests_
    2. Click _Start workspace preparation process_ button
    3. Select `susan` in _Employee_ field and `Office` in _Work type_ field
    4. Click _OK_
-3. Login as `bob` with password `1`. You are a system administrator and you can grant permissions to software systems.
-   1. Open _BPM -> My tasks_
+3. Log in as `bob` with password `1`. You are a system administrator and you can grant permissions to software systems.
+   1. Open _BPM → My tasks_
    2. Select `Grant system permissions` in the left panel and open the task in the right panel
    3. In the _Software requests_ window, create a few software request items. In the edit screen of each item, select a software system and tick the _Permission granted_ checkbox. Then click _OK_ in _Software requests_ window.
-4. Login as `linda` with password `1`. You are a coordinator and you can allocate physical workspace for office workers.
-   1. Open _BPM -> My tasks_
+4. Log in as `linda` with password `1`. You are a coordinator and you can allocate physical workspace for office workers.
+   1. Open _BPM → My tasks_
    2. Select `Allocate workspace` in the left panel and open the task in the right panel
    3. Enter a workspace description in the _Allocate workspace_ dialog, then click _Complete task_
-5. Login as `alice` again. 
-   1. Open _BPM -> My tasks_
+5. Log in as `alice` again. 
+   1. Open _BPM → My tasks_
    2. Select `Check request` in the left panel and open the task in the right panel
    3. Review the _Process log_ field and click _OK_
+
+## See Also
+
+- [BPM Documentation](https://docs.jmix.io/jmix/bpm/index.html)
+- [BPM on Marketplace](https://www.jmix.io/marketplace/bpm/)

@@ -23,8 +23,8 @@ public class OrderEventListener {
         this.dataManager = dataManager;
     }
 
-    @TransactionalEventListener
-    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    @TransactionalEventListener                             // Runs after transaction commit
+    @Transactional(propagation = Propagation.REQUIRES_NEW)  // Starts new transaction to load data
     public void onOrderChangedAfterCommit(final EntityChangedEvent<Order> event) {
         if (event.getType() == EntityChangedEvent.Type.CREATED) {
             Order order = dataManager.load(event.getEntityId()).one();
