@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      title="msg://businessCalendarTestView.title">
+    <layout>
+        <select id="calendarSelect" label="Select business calendar"/>
+        <dateTimePicker id="dateTimePicker" label="Enter date and time" datatype="localDateTime"/>
+        <button id="testButton" text="Test"/>
+    </layout>
+</view>

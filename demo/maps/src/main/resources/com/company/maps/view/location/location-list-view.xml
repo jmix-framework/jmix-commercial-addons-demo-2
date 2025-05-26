@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:c="http://jmix.io/schema/flowui/jpql-condition"
+      xmlns:maps="http://jmix.io/schema/maps/ui"
+      title="msg://locationListView.title"
+      focusComponent="locationsDataGrid">
+    <data>
+        <collection id="locationsDc"
+                    class="com.company.maps.entity.Location">
+            <fetchPlan extends="_base"/>
+            <loader id="locationsDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from Location e]]>
+                </query>
+            </loader>
+        </collection>
+        <instance id="locationDc" class="com.company.maps.entity.Location"/>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <urlQueryParameters>
+            <pagination component="pagination"/>
+        </urlQueryParameters>
+    </facets>
+    <actions>
+        <action id="selectAction" type="lookup_select"/>
+        <action id="discardAction" type="lookup_discard"/>
+    </actions>
+    <layout>
+        <hbox width="100%" height="100%">
+            <vbox height="100%">
+                <hbox id="buttonsPanel" classNames="buttons-panel">
+                    <button id="createBtn" action="locationsDataGrid.create"/>
+                    <button id="editBtn" action="locationsDataGrid.edit"/>
+                    <button id="removeBtn" action="locationsDataGrid.remove"/>
+                    <simplePagination id="pagination" dataLoader="locationsDl"/>
+                </hbox>
+                <dataGrid id="locationsDataGrid"
+                          width="100%"
+                          height="100%"
+                          minHeight="20em"
+                          dataContainer="locationsDc"
+                          columnReorderingAllowed="true">
+                    <actions>
+                        <action id="create" type="list_create" actionVariant="DEFAULT"/>
+                        <action id="edit" type="list_edit"/>
+                        <action id="remove" type="list_remove"/>
+                    </actions>
+                    <columns>
+                        <column property="type" autoWidth="true" filterable="true"/>
+                        <column property="city" autoWidth="true" filterable="true"/>
+                        <column property="address" autoWidth="true" filterable="true"/>
+                    </columns>
+                </dataGrid>
+            </vbox>
+            <maps:geoMap id="map"
+                         height="100%"
+                         width="100%">
+                <maps:mapView centerX="0" centerY="51">
+                    <maps:extent minX="-15" minY="30" maxX="40" maxY="60"/>
+                </maps:mapView>
+                <maps:layers>
+                    <maps:tile>
+                        <maps:osmSource/>
+                    </maps:tile>
+                    <maps:vector id="buildingLayer">
+                        <maps:dataVectorSource id="buildingSource"
+                                               dataContainer="locationsDc"
+                                               property="building"/>
+                    </maps:vector>
+                    <maps:vector id="buildingAreaLayer">
+                        <maps:dataVectorSource id="buildingAreaSource"
+                                               dataContainer="locationDc"
+                                               property="buildingArea"/>
+                    </maps:vector>
+                    <maps:vector id="pathToBuildingLayer">
+                        <maps:dataVectorSource id="pathToBuildingSource"
+                                               dataContainer="locationDc"
+                                               property="pathToBuilding"/>
+                    </maps:vector>
+                    <maps:vector id="buildingEntranceLayer">
+                        <maps:dataVectorSource id="buildingEntranceSource"
+                                               dataContainer="locationDc"
+                                               property="buildingEntrance"/>
+                    </maps:vector>
+                </maps:layers>
+            </maps:geoMap>
+
+        </hbox>
+        <hbox id="lookupActions" visible="false">
+            <button id="selectBtn" action="selectAction"/>
+            <button id="discardBtn" action="discardAction"/>
+        </hbox>
+    </layout>
+</view>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:maps="http://jmix.io/schema/maps/ui"
+      title="msg://locationDetailView.title"
+      focusComponent="form">
+    <data>
+        <instance id="locationDc"
+                  class="com.company.maps.entity.Location">
+            <fetchPlan extends="_base"/>
+            <loader/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <actions>
+        <action id="saveAction" type="detail_saveClose"/>
+        <action id="closeAction" type="detail_close"/>
+    </actions>
+    <layout>
+        <formLayout id="form" dataContainer="locationDc">
+            <textField id="cityField" property="city"/>
+            <textField id="addressField" property="address"/>
+            <select id="typeField" property="type"/>
+            <textField id="buildingField" property="building" readOnly="true">
+                <suffix>
+                    <button id="editBuildingButton" themeNames="tertiary-inline" icon="vaadin:edit"
+                            title="Edit"/>
+                </suffix>
+            </textField>
+            <textField id="buildingAreaField" property="buildingArea"/>
+            <textField id="pathToBuildingField" property="pathToBuilding"/>
+            <textField id="buildingEntranceField" property="buildingEntrance"/>
+        </formLayout>
+        <maps:geoMap id="map"
+                     height="100%"
+                     width="100%">
+            <maps:mapView centerX="0" centerY="51">
+                <maps:extent minX="-15" minY="30" maxX="40" maxY="60"/>
+            </maps:mapView>
+            <maps:layers>
+                <maps:tile>
+                    <maps:osmSource/>
+                </maps:tile>
+                <maps:vector id="buildingLayer">
+                    <maps:dataVectorSource id="buildingSource"
+                                           dataContainer="locationDc"
+                                           property="building"/>
+                </maps:vector>
+                <maps:vector id="buildingAreaLayer">
+                    <maps:dataVectorSource id="buildingAreaSource"
+                                           dataContainer="locationDc"
+                                           property="buildingArea"/>
+                </maps:vector>
+                <maps:vector id="pathToBuildingLayer">
+                    <maps:dataVectorSource id="pathToBuildingSource"
+                                           dataContainer="locationDc"
+                                           property="pathToBuilding"/>
+                </maps:vector>
+                <maps:vector id="buildingEntranceLayer">
+                    <maps:dataVectorSource id="buildingEntranceSource"
+                                           dataContainer="locationDc"
+                                           property="buildingEntrance"/>
+                </maps:vector>
+            </maps:layers>
+        </maps:geoMap>
+        <hbox id="detailActions">
+            <button id="saveAndCloseBtn" action="saveAction"/>
+            <button id="closeBtn" action="closeAction"/>
+        </hbox>
+    </layout>
+</view>
