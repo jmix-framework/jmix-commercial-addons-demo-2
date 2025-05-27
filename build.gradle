@@ -1,1 +1,98 @@
 ext.jmixCompositeProjectRoot = true
+
+tasks.register('zipProject', ZipProject)
+
+/**
+ * Creates a ZIP archive with the current project, including HSQL databases of subprojects.
+ */
+class ZipProject extends DefaultTask {
+
+    @Input
+    List<String> excludeFromZip = []
+
+    @Input
+    List<String> includeToZip = []
+
+    @Option(option = "zipDir", description = "Where to place resulting ZIP")
+    @Internal
+    // don't respect the dir in up-to-date checks
+    def zipDir = "${project.rootDir}"
+
+    @Option(option = "zipFileName", description = "Resulting ZIP file name with extension")
+    @Internal
+    def zipFileName = "${project.name}.zip"
+
+    @TaskAction
+    def zipProject() {
+
+        def tmpDir = "${project.buildDir}/zip"
+        def tmpRootDir = "${project.buildDir}/zip/${project.name}"
+
+        def includeToZip = []
+        includeToZip += this.includeToZip
+
+        def excludeFromZip = [
+                project.rootDir.name + '/frontend/generated',
+                'build',
+                'deploy',
+                'bower_components',
+                'node_modules',
+                'dev-bundle',
+                'bundles',
+                'vite.generated.ts',
+                '.iml'
+        ]
+        excludeFromZip += this.excludeFromZip
+
+        String zipFilePath = "${zipDir}/${zipFileName}"
+
+        project.logger.info("[ZipProject] Deleting old archive")
+        // to exclude recursive packing
+        project.delete(zipFilePath)
+
+        project.logger.info("[ZipProject] Packing files from: ${project.rootDir}")
+        project.copy {
+            from '.'
+            into tmpRootDir
+            exclude { details ->
+                File file = details.file
+                if (isFileMatched(file, includeToZip)) return false
+                // eclipse project files, gradle, git, idea (directory based), Mac OS files
+                if (file.name.startsWith(".")) return true
+                return isFileMatched(file, excludeFromZip)
+            }
+        }
+
+        project.gradle.includedBuilds.each { includedBuild ->
+            project.copy {
+                from "${includedBuild.projectDir}/.jmix/hsqldb"
+                into "$tmpRootDir/${project.rootDir.toPath().relativize(includedBuild.projectDir.toPath())}/.jmix/hsqldb"
+            }
+        }
+
+        ant.zip(destfile: zipFilePath, basedir: tmpDir)
+
+        println("Zip archive has been created at '${project.file(zipFilePath).absolutePath}'")
+
+        project.delete(tmpDir)
+    }
+
+    private static boolean isFileMatched(File file, def rules) {
+        def name = file.name
+        for (String rule : rules) {
+            if (rule.startsWith(".")) {     // extension
+                if (name.endsWith(rule)) {
+                    return true
+                }
+            } else {                        // path
+                if (file.directory && file.toPath().endsWith(rule)) {
+                    return true
+                }
+                if (name == rule) {         // file name
+                    return true
+                }
+            }
+        }
+        return false
+    }
+}
