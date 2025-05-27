@@ -77,7 +77,7 @@ class ZipProject extends DefaultTask {
         project.delete(tmpDir)
     }
 
-    private static boolean isFileMatched(File file, def rules) {
+    static boolean isFileMatched(File file, def rules) {
         def name = file.name
         for (String rule : rules) {
             if (rule.startsWith(".")) {     // extension
