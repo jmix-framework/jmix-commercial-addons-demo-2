@@ -44,7 +44,7 @@
                 <comboBox id="workTypeField" property="workType" colspan="2"/>
             </formItem>
         </formLayout>
-        <details id="softwareRequestsBox" summaryText="msg://com.company.demo.entity/WorkspaceRequest.softwareRequests"
+        <details id="softwareRequestsBox" summaryText="msg://com.company.bpm.entity/WorkspaceRequest.softwareRequests"
                  width="100%" opened="true">
             <hbox id="buttonsPanel" classNames="buttons-panel">
                 <button action="softwareRequestsDataGrid.create"/>
@@ -73,7 +73,7 @@
             </dataGrid>
         </details>
         <textArea id="processLogField" dataContainer="workspaceRequestDc" property="processLog"
-                  width="100%" label="msg://com.company.demo.entity/WorkspaceRequest.processLog"/>
+                  width="100%" label="msg://com.company.bpm.entity/WorkspaceRequest.processLog"/>
         <hbox id="detailActions">
             <button id="completeBtn" text="OK" themeNames="primary"/>
             <button id="closeBtn" action="closeAction"/>

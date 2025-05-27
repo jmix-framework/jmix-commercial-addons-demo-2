@@ -49,7 +49,7 @@
             </formItem>
         </formLayout>
         <details id="softwareRequestsDetails" opened="true" width="100%"
-                 summaryText="msg://com.company.demo.entity/WorkspaceRequest.softwareRequests">
+                 summaryText="msg://com.company.bpm.entity/WorkspaceRequest.softwareRequests">
             <dataGrid id="softwareRequestsDataGrid" dataContainer="softwareRequestsDc" width="100%" minHeight="20em">
                 <columns>
                     <column property="sortValue" header="#"/>
@@ -59,7 +59,7 @@
             </dataGrid>
         </details>
         <textArea id="processLogField" dataContainer="workspaceRequestDc" property="processLog"
-                  width="100%" label="msg://com.company.demo.entity/WorkspaceRequest.processLog"/>
+                  width="100%" label="msg://com.company.bpm.entity/WorkspaceRequest.processLog"/>
         <hbox id="detailActions">
             <button id="completeBtn" text="OK" themeNames="primary"/>
             <button id="closeBtn" action="closeAction"/>

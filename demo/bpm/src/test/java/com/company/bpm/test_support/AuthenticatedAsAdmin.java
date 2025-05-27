@@ -1,4 +1,4 @@
-package com.company.demo.test_support;
+package com.company.bpm.test_support;
 
 import io.jmix.core.security.SystemAuthenticator;
 import org.junit.jupiter.api.extension.AfterEachCallback;

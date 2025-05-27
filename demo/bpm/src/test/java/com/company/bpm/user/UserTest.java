@@ -1,7 +1,7 @@
-package com.company.demo.user;
+package com.company.bpm.user;
 
 import com.company.bpm.entity.User;
-import com.company.demo.test_support.AuthenticatedAsAdmin;
+import com.company.bpm.test_support.AuthenticatedAsAdmin;
 import io.jmix.core.DataManager;
 import io.jmix.core.security.UserRepository;
 import org.junit.jupiter.api.AfterEach;

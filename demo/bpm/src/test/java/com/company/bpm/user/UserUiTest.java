@@ -1,4 +1,4 @@
-package com.company.demo.user;
+package com.company.bpm.user;
 
 import com.company.bpm.BpmDemoApplication;
 import com.company.bpm.entity.User;

@@ -20,7 +20,7 @@
         <formLayout id="form" dataContainer="userDc">
             <textField id="usernameField" property="username" readOnly="true"/>
             <passwordField id="passwordField"
-                           label="msg://com.company.demo.entity/User.password"
+                           label="msg://com.company.bpm.entity/User.password"
                            required="true"
                            visible="false"/>
             <passwordField id="confirmPasswordField"
