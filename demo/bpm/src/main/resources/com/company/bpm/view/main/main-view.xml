@@ -1,28 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<mainView xmlns="http://jmix.io/schema/flowui/main-view"
+<mainView xmlns="http://jmix.io/schema/tabmod/main-view"
           title="msg://MainView.title">
     <actions>
-        <action id="logout" type="logout"/>
+        <action id="logoutAction" type="logout"/>
     </actions>
-    <appLayout>
+    <appLayout primarySection="NAVBAR">
         <navigationBar>
             <header id="header" classNames="jmix-main-view-header">
                 <drawerToggle id="drawerToggle"
                               classNames="jmix-main-view-drawer-toggle"
                               themeNames="contrast"
                               ariaLabel="msg://drawerToggle.ariaLabel"/>
-                <h1 id="viewTitle" classNames="jmix-main-view-title"/>
+                <h2 id="applicationTitle"
+                    text="msg://applicationTitle.text"
+                    classNames="jmix-main-view-application-title">
+                </h2>
             </header>
         </navigationBar>
         <drawerLayout>
             <section id="section" classNames="jmix-main-view-section">
-                <h2 id="applicationTitle"
-                    classNames="jmix-main-view-application-title">
-                    <anchor id="baseLink"
-                            href="."
-                            text="msg://applicationTitle.text"
-                            classNames="jmix-main-view-application-title-base-link"/>
-                </h2>
                 <nav id="navigation"
                      classNames="jmix-main-view-navigation"
                      ariaLabel="msg://navigation.ariaLabel">
@@ -31,14 +27,29 @@
                 <footer id="footer" classNames="jmix-main-view-footer">
                     <userIndicator id="userIndicator"/>
                     <button id="logoutButton"
-                            action="logout"
+                            action="logoutAction"
                             classNames="jmix-logout-button"/>
                 </footer>
             </section>
         </drawerLayout>
-        <initialLayout>
-            <div id="welcomeMessage" classNames="p-m"/>
-            <html content="msg://see-readme" classNames="p-m"/>
-        </initialLayout>
+        <workArea id="workArea"
+                  classNames="jmix-work-area">
+            <mainTabSheet id="mainTabSheet"
+                          classNames="jmix-main-tabsheet"
+                          tabsDraggable="true"
+                          width="100%" height="100%">
+                <actions>
+                    <action id="closeThisTabAction" type="tabmod_closeThisTab"/>
+                    <action id="closeOthersTabsAction" type="tabmod_closeOtherTabs"/>
+                    <action id="closeAllTabsAction" type="tabmod_closeAllTabs"/>
+                </actions>
+            </mainTabSheet>
+            <initialLayout id="initialLayout"
+                           classNames="jmix-initial-layout"
+                           width="100%" height="100%">
+                <div id="welcomeMessage" classNames="p-m"/>
+                <html content="msg://see-readme" classNames="p-m"/>
+            </initialLayout>
+        </workArea>
     </appLayout>
 </mainView>

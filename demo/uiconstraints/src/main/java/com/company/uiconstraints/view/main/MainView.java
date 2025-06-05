@@ -6,15 +6,15 @@ import com.vaadin.flow.component.html.Section;
 import com.vaadin.flow.router.Route;
 import io.jmix.core.MetadataTools;
 import io.jmix.core.usersubstitution.CurrentUserSubstitution;
-import io.jmix.flowui.app.main.StandardMainView;
 import io.jmix.flowui.view.*;
+import io.jmix.tabbedmode.app.main.StandardTabbedModeMainView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 
 @Route("")
 @ViewController(id = "MainView")
 @ViewDescriptor(path = "main-view.xml")
-public class MainView extends StandardMainView {
+public class MainView extends StandardTabbedModeMainView {
 
     @Autowired
     private CurrentUserSubstitution currentUserSubstitution;
