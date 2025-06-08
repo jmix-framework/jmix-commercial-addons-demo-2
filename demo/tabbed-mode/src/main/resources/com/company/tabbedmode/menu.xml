@@ -3,6 +3,8 @@
 
     <menu id="application" title="msg://com.company.tabbedmode/menu.application.title" opened="true">
         <item view="User.list" title="msg://com.company.tabbedmode.view.user/UserListView.title"/>
+        <item view="Project.list" title="msg://com.company.tabbedmode.view.project/projectListView.title"/>
+        <item view="NonCloseableView" title="msg://com.company.tabbedmode.view.noncloseable/nonCloseableView.title"/>
     </menu>
 
 </menu-config>

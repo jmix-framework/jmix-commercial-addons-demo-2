@@ -10,6 +10,7 @@ import io.jmix.core.EntityStates;
 import io.jmix.flowui.Notifications;
 import io.jmix.flowui.component.textfield.TypedTextField;
 import io.jmix.flowui.view.*;
+import io.jmix.tabbedmode.view.TabbedModeViewProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -17,6 +18,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.TimeZone;
 
+@TabbedModeViewProperties(forceDialog = true)
 @Route(value = "users/:id", layout = MainView.class)
 @ViewController(id = "User.detail")
 @ViewDescriptor(path = "user-detail-view.xml")
