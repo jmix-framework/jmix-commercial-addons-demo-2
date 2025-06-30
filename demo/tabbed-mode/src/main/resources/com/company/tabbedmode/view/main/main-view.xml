@@ -47,6 +47,7 @@
             <initialLayout id="initialLayout"
                            classNames="jmix-initial-layout"
                            width="100%" height="100%">
+                <html content="msg://see-readme" classNames="p-m"/>
             </initialLayout>
         </workArea>
     </appLayout>
