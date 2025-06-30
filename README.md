@@ -13,6 +13,7 @@ Open the root project in the IDE with the Jmix Studio plugin installed and refer
 - [Kanban](demo/kanban/README.md)
 - [Maps](demo/maps/README.md)
 - [Notifications](demo/notifications/README.md)
+- [Tabbed Application Mode](demo/tabbed-mode/README.md)
 - [UI Constraints](demo/uiconstraints/README.md)
 - [WebDAV](demo/webdav/README.md)
 

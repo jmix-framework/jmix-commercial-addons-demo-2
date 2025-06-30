@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      title="msg://nonCloseableView.title">
+    <layout>
+        <hbox>
+            <button id="openViewBtn" text="msg://openViewBtn.text" icon="CHEVRON_RIGHT"/>
+            <button id="closeBtn" text="msg:///actions.Close" icon="CLOSE"/>
+        </hbox>
+    </layout>
+</view>
