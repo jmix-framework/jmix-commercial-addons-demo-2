@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:groupg="http://jmix.io/schema/groupgrid/ui"
+      xmlns:c="http://jmix.io/schema/flowui/jpql-condition"
+      title="msg://orderListView.title"
+      focusComponent="ordersDataGrid">
+    <data>
+        <collection id="ordersDc"
+                    class="com.company.groupdatagrid.entity.Order">
+            <fetchPlan extends="_base">
+                <property name="client" fetchPlan="_base"/>
+            </fetchPlan>
+            <loader id="ordersDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from Order_ e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <urlQueryParameters>
+            <genericFilter component="genericFilter"/>
+            <pagination component="pagination"/>
+        </urlQueryParameters>
+        <settings auto="true"/>
+    </facets>
+    <actions>
+        <action id="selectAction" type="lookup_select"/>
+        <action id="discardAction" type="lookup_discard"/>
+    </actions>
+    <layout>
+        <genericFilter id="genericFilter"
+                       dataLoader="ordersDl" opened="false">
+            <properties include=".*"/>
+        </genericFilter>
+        <hbox id="buttonsPanel" classNames="buttons-panel">
+            <startSlot>
+                <button id="refreshButton" action="ordersDataGrid.refreshAction"/>
+                <button id="excelExportButton" action="ordersDataGrid.excelExportAction"/>
+            </startSlot>
+            <endSlot>
+                <simplePagination id="pagination" dataLoader="ordersDl" classNames="ms-auto"
+                                  itemsPerPageVisible="true" itemsPerPageUnlimitedItemVisible="false"
+                                  itemsPerPageDefaultValue="50"/>
+            </endSlot>
+        </hbox>
+        <groupg:groupDataGrid id="ordersDataGrid"
+                  width="100%"
+                  minHeight="20em"
+                  dataContainer="ordersDc"
+                  columnReorderingAllowed="true">
+            <groupg:actions>
+                <groupg:action id="refreshAction" type="list_refresh"/>
+                <groupg:action id="excelExportAction" type="grdexp_excelExport"/>
+            </groupg:actions>
+            <groupg:groupBy>
+                <groupg:columnRef key="client"/>
+                <groupg:columnRef key="status"/>
+            </groupg:groupBy>
+            <groupg:columns resizable="true">
+                <groupg:groupColumn key="group" header="msg://ordersDataGrid.group"/>
+                <groupg:column property="client"/>
+                <groupg:column property="date"/>
+                <groupg:column property="quote" groupAllowed="false"/>
+                <groupg:column property="comment" groupAllowed="false"/>
+                <groupg:column property="total" groupAllowed="false"/>
+                <groupg:column property="discountValue" groupAllowed="false"/>
+                <groupg:column property="discountPercent" groupAllowed="false"/>
+                <groupg:column property="status"/>
+            </groupg:columns>
+        </groupg:groupDataGrid>
+        <hbox id="lookupActions" visible="false">
+            <button id="selectButton" action="selectAction"/>
+            <button id="discardButton" action="discardAction"/>
+        </hbox>
+    </layout>
+</view>

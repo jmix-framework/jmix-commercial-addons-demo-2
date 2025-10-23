@@ -35,6 +35,8 @@ repositories {
 }
 
 dependencies {
+    implementation 'io.jmix.gridexport:jmix-gridexport-flowui-starter'
+
     implementation 'io.jmix.groupgrid:jmix-groupgrid-flowui-starter'
 
     implementation 'io.jmix.core:jmix-core-starter'
@@ -50,6 +52,9 @@ dependencies {
     implementation 'io.jmix.datatools:jmix-datatools-flowui-starter'
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // Faker for demo data generation
+    implementation 'net.datafaker:datafaker:2.5.0'
 
     runtimeOnly 'org.hsqldb:hsqldb'
 

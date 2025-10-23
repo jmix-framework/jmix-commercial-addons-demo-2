@@ -45,6 +45,7 @@
             </section>
         </drawerLayout>
         <initialLayout>
+            <html content="msg://see-readme" classNames="p-m"/>
         </initialLayout>
     </appLayout>
 </mainView>
