@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:groupg="http://jmix.io/schema/groupgrid/ui"
+      xmlns:c="http://jmix.io/schema/flowui/jpql-condition"
+      title="msg://clientListView.title"
+      focusComponent="clientsDataGrid">
+    <data>
+        <collection id="clientsDc"
+                    class="com.company.groupdatagrid.entity.Client">
+            <fetchPlan extends="_base"/>
+            <loader id="clientsDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from Client e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <urlQueryParameters>
+            <genericFilter component="genericFilter"/>
+        </urlQueryParameters>
+        <settings auto="true"/>
+    </facets>
+    <actions>
+        <action id="selectAction" type="lookup_select"/>
+        <action id="discardAction" type="lookup_discard"/>
+    </actions>
+    <layout>
+        <genericFilter id="genericFilter"
+                       dataLoader="clientsDl" opened="false">
+            <properties include=".*"/>
+        </genericFilter>
+        <hbox id="buttonsPanel" classNames="buttons-panel">
+            <startSlot>
+                <button id="refreshButton" action="clientsDataGrid.refreshAction"/>
+                <button id="excelExportButton" action="clientsDataGrid.excelExportAction"/>
+            </startSlot>
+        </hbox>
+        <groupg:groupDataGrid id="clientsDataGrid"
+                  width="100%"
+                  minHeight="20em"
+                  dataContainer="clientsDc"
+                  columnReorderingAllowed="true">
+            <groupg:actions>
+                <groupg:action id="refreshAction" type="list_refresh"/>
+                <groupg:action id="excelExportAction" type="grdexp_excelExport"/>
+            </groupg:actions>
+            <groupg:columns resizable="true">
+                <groupg:groupColumn key="group"/>
+                <groupg:column property="name" groupAllowed="false"/>
+                <groupg:column property="fullName" groupAllowed="false"/>
+                <groupg:column property="city"/>
+                <groupg:column property="type"/>
+                <groupg:column property="vatNumber" groupAllowed="false"/>
+                <groupg:column property="regNumber" groupAllowed="false"/>
+                <groupg:column property="website" groupAllowed="false"/>
+            </groupg:columns>
+        </groupg:groupDataGrid>
+        <hbox id="lookupActions" visible="false">
+            <button id="selectButton" action="selectAction"/>
+            <button id="discardButton" action="discardAction"/>
+        </hbox>
+    </layout>
+</view>

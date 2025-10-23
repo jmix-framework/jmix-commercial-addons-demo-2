@@ -17,7 +17,7 @@ version = '0.0.1-SNAPSHOT'
 repositories {
     mavenCentral()
     maven {
-        url 'https://global.repo.jmix.io/repository/public'
+        url = 'https://global.repo.jmix.io/repository/public'
     }
     if (file('../../trial_repository').exists()) {
         maven {
@@ -35,6 +35,10 @@ repositories {
 }
 
 dependencies {
+    implementation 'io.jmix.gridexport:jmix-gridexport-flowui-starter'
+
+    implementation 'io.jmix.groupgrid:jmix-groupgrid-flowui-starter'
+
     implementation 'io.jmix.core:jmix-core-starter'
     implementation 'io.jmix.data:jmix-eclipselink-starter'
     implementation 'io.jmix.security:jmix-security-starter'
@@ -44,15 +48,20 @@ dependencies {
     implementation 'io.jmix.flowui:jmix-flowui-starter'
     implementation 'io.jmix.flowui:jmix-flowui-data-starter'
     implementation 'io.jmix.flowui:jmix-flowui-themes'
-    implementation 'io.jmix.tabbedmode:jmix-tabbedmode-flowui-starter'
+    implementation 'io.jmix.datatools:jmix-datatools-starter'
+    implementation 'io.jmix.datatools:jmix-datatools-flowui-starter'
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // Faker for demo data generation
+    implementation 'net.datafaker:datafaker:2.5.0'
 
     runtimeOnly 'org.hsqldb:hsqldb'
 
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
+    testImplementation 'io.jmix.flowui:jmix-flowui-test-assist'
 }
 
 configurations.implementation {
